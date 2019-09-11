@@ -1,0 +1,33 @@
+html, body {
+    text-align: center;
+    font-family: monospace
+}
+
+div {
+    width: 300px;
+    margin:0px auto;
+    border:1px solid #ddd;
+}
+
+button {
+    padding:10px 20px;
+    font-size:15px;
+    background-color: transparent;
+    margin:10px 10px;
+    border-radius:100px;
+}
+
+button:active, button:focus {
+    outline:0px;
+    outline:none;
+}
+
+p {
+    font-size:18px;
+    color:#000;
+}
+
+span {
+    font-size:25px;
+    font-weight:bolder;
+}

@@ -1,26 +1,51 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {connect} from 'react-redux';
+import * as actions from './actions';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      score: 1
+    }
+  }
+
+  handleAddScore = () => {
+    const {scoreAdd} = this.props;
+
+    scoreAdd();
+  }
+
+  handleSubScore = () => {
+    const {scoreSub} = this.props;
+
+    scoreSub();
+  }
+
+  render(){
+    return (
+      <div className="App">
+        <p>Score: <span>{this.props.score}</span></p>
+        <button onClick={this.handleAddScore}>Add +</button>
+        <button onClick={this.handleSubScore}>Sub -</button>
+      </div>
+    );
+  }
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    score: state.score,
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    scoreAdd : () => dispatch(actions.scoreAdd(1)),
+    scoreSub : () => dispatch(actions.scoreSub(1))
+  }
+}
+
+const ReduxApp = connect(mapStateToProps, mapDispatchToProps)(App)
+
+export default ReduxApp;

@@ -3,9 +3,9 @@ html, body {
     font-family: monospace
 }
 
-div {
+.App {
     width: 300px;
-    margin:0px auto;
+    margin:100px auto;
     border:1px solid #ddd;
 }
 
@@ -25,6 +25,8 @@ button:active, button:focus {
 p {
     font-size:18px;
     color:#000;
+    border-bottom:1px solid #ddd;
+    padding-bottom: 10px;
 }
 
 span {

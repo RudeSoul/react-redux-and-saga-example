@@ -1,23 +1,20 @@
 import * as types from './actionTypes';
 
 const defaultState = {
-    score: 1
+    data: 1,
+    image: 'https://bodiez.com/wp-content/uploads/2015/09/medium-default-avatar.png'
 }
 
 export const myReducer = (state = defaultState, action) => {
-    console.log({state, action})
     switch(action.type) {
-        case types.SCORE_ADD: {
-            const {addScoreBy} = action;
+        case types.UPDATE_DATA: {
+            const {data} = action;
             
-            const currentScore = state.score;
-            return {...state, score: currentScore + addScoreBy}
+            return {...state, data}
         }
-        case types.SCORE_SUB: {
-            const {subScoreBy} = action;
-            
-            const currentScore = state.score;
-            return {...state, score: currentScore - subScoreBy}
+        case types.UPDATE_IMAGE: {
+            const {image} = action;
+            return {...state, image}
         }
         default:
             return state;

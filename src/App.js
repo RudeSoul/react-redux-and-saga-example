@@ -6,28 +6,31 @@ class App extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      score: 1
+      data: 1
     }
   }
 
-  handleAddScore = () => {
-    const {scoreAdd} = this.props;
+  handleAddData = () => {
+    const {requestImage, data} = this.props;
 
-    scoreAdd();
+    requestImage(data + 1);
   }
 
-  handleSubScore = () => {
-    const {scoreSub} = this.props;
+  handleSubData = () => {
+    const {requestImage, data} = this.props;
 
-    scoreSub();
+    requestImage(data - 1);
   }
 
   render(){
+    const {data, image} = this.props;
+
     return (
       <div className="App">
-        <p>Score: <span>{this.props.score}</span></p>
-        <button onClick={this.handleAddScore}>Add +</button>
-        <button onClick={this.handleSubScore}>Sub -</button>
+        <img src={image} alt="Profile" />
+        <p>Data: <span>{data}</span></p>
+        <button onClick={this.handleAddData}>Add +</button>
+        <button onClick={this.handleSubData}>Sub -</button>
       </div>
     );
   }
@@ -35,14 +38,14 @@ class App extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    score: state.score,
+    data: state.data,
+    image: state.image
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    scoreAdd : () => dispatch(actions.scoreAdd(1)),
-    scoreSub : () => dispatch(actions.scoreSub(1))
+    requestImage : (data) => dispatch(actions.requestImage(data))
   }
 }
 

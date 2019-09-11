@@ -1,2 +1,3 @@
-export const SCORE_ADD = "SCORE_ADD";
-export const SCORE_SUB = "SCORE_SUB";
+export const UPDATE_DATA = "UPDATE_DATA";
+export const UPDATE_IMAGE="UPDATE_IMAGE";
+export const IMAGE_REQUEST="IMAGE_REQUEST";

@@ -1,15 +1,23 @@
 import * as types from './actionTypes';
 
-export const scoreAdd = (addScoreBy = 1) => {
-    return ({
-        type : types.SCORE_ADD,
-        addScoreBy
-    })
-}
+export const updateData = (data) => (
+    {
+        type : types.UPDATE_DATA,
+        data
+    }
+)
 
-export const scoreSub = (subScoreBy = 1) => {
-    return ({
-        type : types.SCORE_SUB,
-        subScoreBy
-    })
-}
+export const requestImage = data => (
+    {
+        type: types.IMAGE_REQUEST,
+        data
+    }
+)
+
+export const updateImage = image => (
+    {
+        type: types.UPDATE_IMAGE,
+        image
+    }
+)
+

@@ -33,3 +33,10 @@ span {
     font-size:25px;
     font-weight:bolder;
 }
+
+img {
+    border-radius:100px;
+    width:100px;
+    height:100px;
+    margin-top:20px;
+}

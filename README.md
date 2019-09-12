@@ -11,12 +11,12 @@ OR
 $ yarn start
 ```
 
-##### The react redux example is in the `master` branch.
+#### The react redux example is in the `master` branch.
 ``` sh
 $ git checkout master
 ```
 
-##### The react saga example is in the `master` branch.
+#### The react saga example is in the `saga` branch.
 ``` sh
 $ git checkout saga
 ```

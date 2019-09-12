@@ -4,7 +4,7 @@ $ git clone https://github.com/tiwarirabi/react-redux-and-saga-example
 $ cd react-redux-and-saga-example/
 ```
 ``` sh
-$ yarn start
+$ npm start
 ```
 OR
 ``` sh
